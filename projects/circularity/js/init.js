@@ -7,7 +7,7 @@ var init = function (window) {
         app = window.opspark.makeApp(),
         canvas = app.canvas, 
         view = app.view,
-        fps = draw.fps('#000');
+        fps = draw.fps('#060');
         
     
     window.opspark.makeGame = function() {
@@ -20,13 +20,17 @@ var init = function (window) {
         ////////////////////////////////////////////////////////////
         
         // TODO 1 : Declare and initialize our variables
-
+     var circle;
+     var circles = [100];	
 
         // TODO 2 : Create a function that draws a circle 
-        
-
+      // Code to draw a circle
+      circle = draw.randomCircleInArea(canvas, true, true, '#999', 2);
+      physikz.addRandomVelocity(circle, canvas);
+      view.addChild(circle);
+      circles.push(circle);
         // TODO 3 / 7 : Call the drawCircle() function 
-
+     
 
         ////////////////////////////////////////////////////////////
         ///////////////// PROGRAM LOGIC ////////////////////////////
@@ -40,7 +44,6 @@ var init = function (window) {
         function update() {
             // TODO 4 : Update the circle's position //
 
-            
             // TODO 5 / 10 : Call game.checkCirclePosition() on your circles.
            
 
